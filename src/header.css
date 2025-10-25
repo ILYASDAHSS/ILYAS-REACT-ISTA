@@ -1,0 +1,31 @@
+
+li,a,button{
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: cornsilk;
+  list-style: none;
+}
+header{
+  background-color: teal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+.logo{
+  font-size: 24px;
+  font-weight: bold;
+  color: cornsilk;
+}
+.nav-links{
+  display: flex;
+  gap: 30px;
+}
+.nav-links a{
+  transition: color 0.6s;
+}
+.nav-links a:hover{
+  color: lightcoral;
+}

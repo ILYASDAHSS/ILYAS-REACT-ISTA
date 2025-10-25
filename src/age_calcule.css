@@ -1,0 +1,116 @@
+.AGE_CALULE {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 25px;
+  border-radius: 15px;
+  background: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  transition: 0.3s;
+}
+.AGE_CALULE:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+.AGE_CALULE h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00c3ff;
+  text-shadow: 0 0 5px rgba(0, 195, 255, 0.6);
+}
+
+.AGE_CALULE p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.AGE_CALULE form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.AGE_CALULE label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #9ad0ec;
+}
+
+.AGE_CALULE input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #2c2c44;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.AGE_CALULE input:focus {
+  background: #343456;
+  border: 1px solid #00c3ff;
+  box-shadow: 0 0 8px rgba(0, 195, 255, 0.5);
+}
+
+.AGE_CALULE button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #00c3ff, #0066ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.AGE_CALULE button:hover {
+  background: linear-gradient(90deg, #0066ff, #00c3ff);
+  transform: scale(1.05);
+}
+
+.resultat_age {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #00ffcc;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 255, 204, 0.4);
+}
+input[type="radio"] {
+  width: auto;
+  margin: 0 10px;
+  accent-color: #00c3ff;
+}
+
+select {
+  width: 84%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #2c2c44;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.2s;
+}
+select:focus {
+  background: #343456;
+  border: 1px solid #00c3ff;
+  box-shadow: 0 0 8px rgba(0, 195, 255, 0.5);
+}
+select option {
+  background: #2c2c44;
+  color: #fff;
+}
+select option:hover {
+  background: #343456;
+}
