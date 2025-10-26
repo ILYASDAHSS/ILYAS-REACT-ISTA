@@ -1,0 +1,4 @@
+Dependency Array	When it runs	Example
+[]	🔹 Only once — when the component mounts (loads)	useEffect(() => console.log("Hello!"), []);´
+[variable]	🔹 Runs every time that variable changes	useEffect(() => console.log(city), [city]);
+(no array)	🔹 Runs every render (can cause performance issues)	useEffect(() => console.log("Runs every time"));

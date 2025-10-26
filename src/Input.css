@@ -1,0 +1,5 @@
+input:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 6px dodgerblue;
+  background-color: #eef7ff;
+}

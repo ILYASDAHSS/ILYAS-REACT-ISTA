@@ -1,0 +1,135 @@
+import React, { useReducer, useState } from "react";
+
+// Reducer function
+function todoReducer(todos, action) {
+  switch (action.type) {
+    case "ADD_TODO":
+      return [...todos, { id: Date.now(), text: action.payload, completed: false }];
+    case "TOGGLE_TODO":
+      return todos.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+    case "DELETE_TODO":
+      return todos.filter((todo) => todo.id !== action.payload);
+    default:
+      return todos;
+  }
+}
+
+export default function TodoApp() {
+  const [todos, dispatch] = useReducer(todoReducer, []);
+  const [input, setInput] = useState("");
+
+  const handleAdd = () => {
+    if (input.trim() === "") return;
+    dispatch({ type: "ADD_TODO", payload: input });
+    setInput("");
+  };
+
+  return (
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: "50px",
+        backgroundColor: "#f5f5f5",
+        minHeight: "100vh",
+        padding: "20px",
+      }}
+    >
+      <h1>📝 useReducer Todo App</h1>
+
+      {/* ✅ Example image rendered correctly */}
+      <img
+        src={userIcon}
+        alt="User"
+        style={{
+          width: "80px",
+          height: "80px",
+          borderRadius: "50%",
+          marginBottom: "20px",
+        }}
+      />
+
+      <div>
+        <input
+          type="text"
+          value={input}
+          placeholder="Enter a task..."
+          onChange={(e) => setInput(e.target.value)}
+          style={{
+            padding: "8px",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            marginRight: "10px",
+            width: "200px",
+          }}
+        />
+        <button
+          onClick={handleAdd}
+          style={{
+            padding: "8px 12px",
+            borderRadius: "5px",
+            border: "none",
+            backgroundColor: "#007bff",
+            color: "white",
+            cursor: "pointer",
+          }}
+        >
+          Add
+        </button>
+      </div>
+
+      <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
+        {todos.map((todo) => (
+          <li
+            key={todo.id}
+            style={{
+              margin: "10px 0",
+              backgroundColor: "white",
+              padding: "10px",
+              borderRadius: "8px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "10px",
+              width: "300px",
+              marginInline: "auto",
+              boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+            }}
+          >
+            <span
+              onClick={() =>
+                dispatch({ type: "TOGGLE_TODO", payload: todo.id })
+              }
+              style={{
+                textDecoration: todo.completed ? "line-through" : "none",
+                cursor: "pointer",
+                color: todo.completed ? "gray" : "black",
+                flex: 1,
+              }}
+            >
+              {todo.text}
+            </span>
+            <button
+              onClick={() =>
+                dispatch({ type: "DELETE_TODO", payload: todo.id })
+              }
+              style={{
+                backgroundColor: "red",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+                padding: "5px 8px",
+              }}
+            >
+              ❌
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
